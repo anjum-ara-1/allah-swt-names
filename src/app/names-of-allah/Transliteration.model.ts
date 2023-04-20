@@ -1,5 +1,5 @@
 export interface Transliteration {
-    name?: string,
+    Name?: string,
     Transliteration?: string,
     Meaning?: string
 
