@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TransliterationService } from './Transliteration.service';
+import { Transliteration } from './Transliteration.model';
+
 
 @Component({
   selector: 'app-names-of-allah',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NamesOfAllahComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['name', 'Transliteration', 'Meaning'];
+  dataSource: Transliteration[] = []
+
+  constructor( private service:TransliterationService) { }
 
   ngOnInit(): void {
+    this.getDataList();
   }
-
+  
+  getDataList(){
+    this.service.getData().subscribe({
+      next:(res)=> {
+        this.dataSource = res;
+      },
+      error:(err)=> {
+        "something went worng"
+      }
+    })
+  }
 }
