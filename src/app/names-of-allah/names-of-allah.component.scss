@@ -1,6 +1,24 @@
 table {
   width: 100%;
 }
+
+.flex-container {
+  list-style: none;
+  display: flex;
+  margin-bottom: 10px
+}
+
+.wrap {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .card {
   box-sizing: border-box;
   width: 190px;
@@ -19,6 +37,7 @@ table {
   user-select: none;
   font-weight: bolder;
   color: black;
+  display: flex;
 }
 
 .card:hover {
@@ -38,5 +57,4 @@ table {
   backdrop-filter: blur(6px);
   border-radius: 17px;
   text-align: center;
-  margin-right: 50px;
 }

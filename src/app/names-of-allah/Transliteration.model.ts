@@ -1,6 +1,7 @@
 export interface Transliteration {
     Name?: string,
     Transliteration?: string,
-    Meaning?: string
+    Meaning?: string,
+    Audio?:string
 
 }

@@ -11,7 +11,8 @@ import { Transliteration } from './Transliteration.model';
 export class NamesOfAllahComponent implements OnInit {
 
   displayedColumns: string[] = ['name', 'Transliteration', 'Meaning'];
-  dataSource: Transliteration[] = []
+  dataSource: Transliteration[] = [];
+  
 
   constructor( private service:TransliterationService) { }
 
@@ -29,4 +30,14 @@ export class NamesOfAllahComponent implements OnInit {
       }
     })
   }
+
+  playSound(filename: string){
+    const path = `/assets/sound/${filename}`;
+    const audio = new Audio();
+    audio.src = path;
+    audio.load();
+    audio.play();
+  }
+   
+  
 }

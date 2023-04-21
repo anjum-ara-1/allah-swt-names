@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { NamesOfAllahComponent } from './names-of-allah/names-of-allah.component';
 import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatGridListModule } from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [AppComponent, NamesOfAllahComponent],
@@ -15,6 +17,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HttpClientModule,
     MatTableModule,
     FlexLayoutModule,
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],

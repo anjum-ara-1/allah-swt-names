@@ -2,52 +2,62 @@
     {
         "Name": "ٱلْرَّحْمَـانُ",
         "Transliteration": "AR-RAHMAAN",
-        "Meaning": "The Most or Entirely Merciful"
+        "Meaning": "The Most or Entirely Merciful",
+        "Audio": "AR-RAHMAAN.mp3"
     },
     {
         "Name": "ٱلْرَّحِيْمُ",
         "Transliteration": "AR-RAHEEM",
-        "Meaning": "The Bestower of Mercy"
+        "Meaning": "The Bestower of Mercy",
+        "Audio":"AR-RAHEEM.mp3"
     },
     {
         "Name": "ٱلْمَلِكُ",
         "Transliteration": "AL-MALIK",
-        "Meaning": "The King and Owner of Dominion"
+        "Meaning": "The King and Owner of Dominion",
+        "Audio":"AL-MALIK.mp3"
     },
     {
         "Name": "ٱلْقُدُّوسُ",
         "Transliteration": "AL-QUDDUS",
-        "Meaning": "The Absolutely Pure"
+        "Meaning": "The Absolutely Pure",
+        "Audio":"AL-QUDDUS.mp3"
     },
     {
         "Name": "ٱلْسَّلَامُ",
         "Transliteration": "AS-SALAM",
-        "Meaning": "The Perfection and Giver of Peace"
+        "Meaning": "The Perfection and Giver of Peace",
+        "Audio":"AS-SALAM.mp3"
     },
     {
         "Name": "ٱلْمُؤْمِنُ",
         "Transliteration": "AL-MU’MIN",
-        "Meaning": "The One Who gives Emaan and Security"
+        "Meaning": "The One Who gives Emaan and Security",
+        "Audio":"AL-MU’MIN.mp3"
     },
     {
         "Name": "ٱلْمُهَيْمِنُ",
         "Transliteration": "AL-MUHAYMIN",
-        "Meaning": "The Guardian, The Witness, The Overseer"
+        "Meaning": "The Guardian, The Witness, The Overseer",
+        "Audio":"AL-MUHAYMIN.mp3"
     },
     {
         "Name": "ٱلْعَزِيزُ",
         "Transliteration": "AL-AZEEZ",
-        "Meaning": "The All Mighty"
+        "Meaning": "The All Mighty",
+        "Audio":"AL-AZEEZ.mp3"
     },
     {
         "Name": "ٱلْجَبَّارُ",
         "Transliteration": "AL-JABBAR",
-        "Meaning": "The Compeller, The Restorer"
+        "Meaning": "The Compeller, The Restorer",
+        "Audio":"AL-JABBAR.mp3"
     },
     {
         "Name": "ٱلْمُتَكَبِّرُ",
         "Transliteration": "AL-MUTAKABBIR",
-        "Meaning": "The Supreme, The Majestic"
+        "Meaning": "The Supreme, The Majestic",
+        "Audio":"AL-MUTAKABBI.mp3"
     },
     {
         "Name": "ٱلْخَالِقُ",
