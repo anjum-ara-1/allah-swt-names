@@ -13,7 +13,7 @@
         {{item.Meaning}}</span></div> </li>
       
     </ul> -->
-    <ul>
+    <ul class="flex-container wrap" >
       <li class="flex-container wrap" *ngFor="let item of dataSource" (click)="playSound(item.Audio!)">
         <span class="card" 
         fxLayoutAlign="center center"> {{item.Name}}<br>{{item.Transliteration}}<br>
