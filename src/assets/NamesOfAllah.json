@@ -62,47 +62,56 @@
     {
         "Name": "ٱلْخَالِقُ",
         "Transliteration": "AL-KHAALIQ",
-        "Meaning": "The Creator, The Maker"
+        "Meaning": "The Creator, The Maker",
+        "Audio":"AL-KHAALIQ.mp3"
     },
     {
         "Name": "ٱلْبَارِئُ",
         "Transliteration": "AL-BAARI’",
-        "Meaning": "The Originator"
+        "Meaning": "The Originator",
+        "Audio":"AL-BAARI’.mp3"
     },
     {
         "Name": "ٱلْمُصَوِّرُ",
         "Transliteration": "AL-MUSAWWIR",
-        "Meaning": "The Fashioner"
+        "Meaning": "The Fashioner",
+        "Audio":"AL-MUSAWWIR.mp3"
     },
     {
         "Name": "ٱلْغَفَّارُ",
         "Transliteration": "AL-GHAFFAR",
-        "Meaning": "The All- and Oft-Forgiving"
+        "Meaning": "The All- and Oft-Forgiving",
+        "Audio":"AL-GHAFFAR.mp3"
     },
     {
         "Name": "ٱلْقَهَّارُ",
         "Transliteration": "AL-QAHHAR",
-        "Meaning": "The Subduer, The Ever-Dominating"
+        "Meaning": "The Subduer, The Ever-Dominating",
+        "Audio":"AL-QAHHAR.mp3"
     },
     {
         "Name": "ٱلْوَهَّابُ",
         "Transliteration": "AL-WAHHAAB",
-        "Meaning": "The Giver of Gifts"
+        "Meaning": "The Giver of Gifts",
+        "Audio":"AL-WAHHAAB.mp3"
     },
     {
         "Name": "ٱلْرَّزَّاقُ",
         "Transliteration": "AR-RAZZAAQ",
-        "Meaning": "The Provider"
+        "Meaning": "The Provider",
+        "Audio":"AR-RAZZAAQ.mp3"
     },
     {
         "Name": "ٱلْفَتَّاحُ",
         "Transliteration": "AL-FATTAAH",
-        "Meaning": "The Opener, The Judge"
+        "Meaning": "The Opener, The Judge",
+        "Audio":"AL-FATTAAH.mp3"
     },
     {
         "Name": "ٱلْعَلِيمُ",
         "Transliteration": "AL-‘ALEEM",
-        "Meaning": "The All-Knowing, The Omniscient"
+        "Meaning": "The All-Knowing, The Omniscient",
+        "Audio":"AL-‘ALEEM.mp3"
     },
     {
         "Name": "ٱلْقَابِضُ",
