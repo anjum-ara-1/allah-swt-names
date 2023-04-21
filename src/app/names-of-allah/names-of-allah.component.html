@@ -1,18 +1,7 @@
 <div class="container">
   <h1>99 Names of Allah (Al Asma Ul Husna)</h1>
   <div>
-    <!-- <mat-grid-list cols="5" rowHeight="2:1">
-      <mat-grid-tile *ngFor="let item of dataSource"><span class="card" (click)="playSound(item.Audio!)"
-        fxLayoutAlign="center center"> {{item.Name}}<br>{{item.Transliteration}}<br>
-        {{item.Meaning}}</span></mat-grid-tile>
-    </mat-grid-list> -->
-  
-    <!-- <ul  >
-      <li class="flex-container wrap"><div *ngFor="let item of dataSource"><span class="card" (click)="playSound(item.Audio!)"
-        fxLayoutAlign="center center"> {{item.Name}}<br>{{item.Transliteration}}<br>
-        {{item.Meaning}}</span></div> </li>
-      
-    </ul> -->
+
     <ul class="flex-container wrap" >
       <li class="flex-container wrap" *ngFor="let item of dataSource" (click)="playSound(item.Audio!)">
         <span class="card" 
@@ -21,38 +10,10 @@
 
     </ul>
 
-
-    <!-- <div *ngFor="let item of dataSource"><span class="card" (click)="playSound(item.Audio!)"
-        fxLayoutAlign="center center"> {{item.Name}}<br>{{item.Transliteration}}<br>
-        {{item.Meaning}}</span></div> -->
-
-
-
-
   </div>
-
-
 
 </div>
 
-<!-- <mat-card class="example-card" *ngFor="let item of dataSource" >
-      <mat-card-header>
-        <mat-card-title>{{item.Name}}</mat-card-title>
-        <mat-card-subtitle>{{item.Transliteration}}</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p> {{item.Meaning}}</p>
-      </mat-card-content>
-    </mat-card> -->
-
-<!-- 
-    <table>
-      <tr class="row" *ngFor="let item of dataSource" >
-        <div ><td class="card" (click)="playSound(item.Audio!)" fxLayoutAlign="center center" fxLayout="row"  >{{item.Name}}<br>{{item.Transliteration}}<br> {{item.Meaning}}</td></div>
-      </tr> 
-       <tr class="row" *ngFor="let item of dataSource">
-        <td class="card" (click)="playSound(item.Audio!)">{{item.Name}} </td>
-        <td class="cardSimple">{{item.Transliteration}}</td>
-        <td class="cardSimple">{{item.Meaning}}</td>
-      </tr>
-    </table> -->
+ <!-- <div *ngFor="let item of dataSource"><span class="card" (click)="playSound(item.Audio!)"
+        fxLayoutAlign="center center"> {{item.Name}}<br>{{item.Transliteration}}<br>
+        {{item.Meaning}}</span></div> -->
