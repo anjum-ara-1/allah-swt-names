@@ -1,8 +1,8 @@
-<mat-toolbar color="primary">
+<mat-toolbar >
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>My App</span>
+  <img [routerLink]="'/'" src="/assets/icon.png" width="68px" height="24px" />
   <span class="example-spacer"></span>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
@@ -14,10 +14,11 @@
 
 <div class="container">
   <h1>99 Names of Allah (Al Asma Ul Husna)</h1>
-  <div id="name-line" fxLayoutGap="10px">
-    <div class="letter-box" *ngFor="let item of dataSource" >
+  <h3>when you click on any name then AI say the name in voice</h3>
+  <div id="name-line" fxLayoutGap="10px" >
+    <div class="letter-box" *ngFor="let item of dataSource"  (click)="playSound(item.Audio!)">
       <div class="letter-only letter-border letter-selector">
-        <div class="main-letter" (click)="playSound(item.Audio!)">
+        <div class="main-letter" >
           <span> <span class="name-design"> {{item.Name}} </span><br>{{item.Transliteration}}<br>
             {{item.Meaning}}</span>
         </div>
