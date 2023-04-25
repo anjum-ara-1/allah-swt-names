@@ -116,87 +116,104 @@
     {
         "Name": "ٱلْقَابِضُ",
         "Transliteration": "AL-QAABID",
-        "Meaning": "The Withholder"
+        "Meaning": "The Withholder",
+        "Audio":"AL-QAABID.mp3"
     },
     {
         "Name": "ٱلْبَاسِطُ",
         "Transliteration": "AL-BAASIT",
-        "Meaning": "The Extender"
+        "Meaning": "The Extender",
+        "Audio":"AL-BAASIT.mp3"
     },
     {
         "Name": "ٱلْخَافِضُ",
         "Transliteration": "AL-KHAAFIDH",
-        "Meaning": "The Reducer, The Abaser"
+        "Meaning": "The Reducer, The Abaser",
+        "Audio":"AL-KHAAFIDH.mp3"
     },
     {
         "Name": "ٱلْرَّافِعُ",
         "Transliteration": "AR-RAAFI’",
-        "Meaning": "The Exalter, The Elevator"
+        "Meaning": "The Exalter, The Elevator",
+        "Audio":"AR-RAAFI’.mp3"
     },
     {
         "Name": "ٱلْمُعِزُّ",
         "Transliteration": "AL-MU’IZZ",
-        "Meaning": "The Honourer, The Bestower"
+        "Meaning": "The Honourer, The Bestower",
+        "Audio":"AL-MU’IZZ.mp3"
     },
     {
         "Name": "ٱلْمُذِلُّ",
         "Transliteration": "AL-MUZIL",
-        "Meaning": "The Dishonourer, The Humiliator"
+        "Meaning": "The Dishonourer, The Humiliator",
+        "Audio":"AL-MUZIL.mp3"
     },
     {
         "Name": "ٱلْسَّمِيعُ",
         "Transliteration": "AS-SAMEE’",
-        "Meaning": "The All-Hearing"
+        "Meaning": "The All-Hearing",
+        "Audio":"AS-SAMEE’.mp3"
     },
     {
         "Name": "ٱلْبَصِيرُ",
         "Transliteration": "AL-BASEER",
-        "Meaning": "The All-Seeing"
+        "Meaning": "The All-Seeing",
+        "Audio":"AL-BASEER.mp3"
     },
     {
         "Name": "ٱلْحَكَمُ",
         "Transliteration": "AL-HAKAM",
-        "Meaning": "The Judge, The Giver of Justice"
+        "Meaning": "The Judge, The Giver of Justice",
+        "Audio":"AL-HAKAM.mp3"
     },
     {
         "Name": "ٱلْعَدْلُ",
         "Transliteration": "AL-‘ADL",
-        "Meaning": "The Utterly Just"
+        "Meaning": "The Utterly Just",
+        "Audio":"AL-‘ADL.mp3"
     },
     {
         "Name": "ٱلْلَّطِيفُ",
         "Transliteration": "AL-LATEEF",
-        "Meaning": "The Subtle One, The Most Gentle"
+        "Meaning": "The Subtle One, The Most Gentle",
+        "Audio":"AL-LATEEF.mp3"
     },
     {
         "Name": "ٱلْخَبِيرُ",
         "Transliteration": "AL-KHABEER",
-        "Meaning": "The Acquainted, the All-Aware"
+        "Meaning": "The Acquainted, the All-Aware",
+        "Audio":"AL-KHABEER.mp3"
     },
     {
         "Name": "ٱلْحَلِيمُ",
         "Transliteration": "AL-HALEEM",
-        "Meaning": "The Most Forbearing"
+        "Meaning": "The Most Forbearing",
+        "Audio":"AL-HALEEM.mp3"
     },
     {
         "Name": "ٱلْعَظِيمُ",
         "Transliteration": "AL-‘ATHEEM",
-        "Meaning": "The Magnificent, The Supreme"
+        "Meaning": "The Magnificent, The Supreme",
+        "Audio":"AL-‘ATHEEM.mp3"
     },
     {
         "Name": "ٱلْغَفُورُ",
         "Transliteration": "AL-GHAFOOR",
-        "Meaning": "The Forgiving, The Exceedingly Forgiving"
+        "Meaning": "The Forgiving, The Exceedingly Forgiving",
+        "Audio":"AL-GHAFOOR.mp3"
     },
     {
         "Name": "ٱلْشَّكُورُ",
         "Transliteration": "ASH-SHAKOOR",
-        "Meaning": "The Most Appreciative"
+        "Meaning": "The Most Appreciative",
+        "Audio":"ASH-SHAKOOR.mp3"
     },
     {
         "Name": "ٱلْعَلِيُّ",
         "Transliteration": "AL-‘ALEE",
-        "Meaning": "The Most High, The Exalted"
+        "Meaning": "The Most High, The Exalted",
+        "Audio":"AL-‘ALEE.mp3"
     },
     {
         "Name": "ٱلْكَبِيرُ",

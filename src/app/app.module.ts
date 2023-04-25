@@ -7,7 +7,9 @@ import { NamesOfAllahComponent } from './names-of-allah/names-of-allah.component
 import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatGridListModule } from '@angular/material/grid-list';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [AppComponent, NamesOfAllahComponent],
@@ -18,7 +20,9 @@ import {MatCardModule} from '@angular/material/card';
     MatTableModule,
     FlexLayoutModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
