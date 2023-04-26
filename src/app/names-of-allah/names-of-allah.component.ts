@@ -12,6 +12,13 @@ export class NamesOfAllahComponent implements OnInit {
 
   displayedColumns: string[] = ['name', 'Transliteration', 'Meaning'];
   dataSource: Transliteration[] = [];
+  disabled = false;
+  max = 100;
+  min = 0;
+  showTicks = false;
+  step = 1;
+  thumbLabel = false;
+  value = 0;
   
 
   constructor( private service:TransliterationService) { }
@@ -35,9 +42,11 @@ export class NamesOfAllahComponent implements OnInit {
     const path = `/assets/sound/${filename}`;
     const audio = new Audio();
     audio.src = path;
+    audio.playbackRate = 0.1;
     audio.load();
     audio.play();
   }
-   
+  
+ 
   
 }

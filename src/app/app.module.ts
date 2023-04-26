@@ -11,6 +11,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [AppComponent, NamesOfAllahComponent],
@@ -25,6 +27,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatSliderModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
