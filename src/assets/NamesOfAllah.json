@@ -218,22 +218,26 @@
     {
         "Name": "ٱلْكَبِيرُ",
         "Transliteration": "AL-KABEER",
-        "Meaning": "The Greatest, The Most Grand"
+        "Meaning": "The Greatest, The Most Grand",
+        "Audio":"AL-KABEER.mp3"
     },
     {
         "Name": "ٱلْحَفِيظُ",
         "Transliteration": "AL-HAFEEDH",
-        "Meaning": "The Preserver, The All-Heedful and All-Protecting"
+        "Meaning": "The Preserver, The All-Heedful and All-Protecting",
+        "Audio":"AL-HAFEEDH.mp3"
     },
     {
         "Name": "ٱلْمُقِيتُ",
         "Transliteration": "AL-MUQEET",
-        "Meaning": "The Sustainer"
+        "Meaning": "The Sustainer",
+        "Audio":"AL-MUQEET.mp3"
     },
     {
         "Name": "ٱلْحَسِيبُ",
         "Transliteration": "AL-HASEEB",
-        "Meaning": "The Reckoner, The Sufficient"
+        "Meaning": "The Reckoner, The Sufficient",
+        "Audio":"AL-HASEEB.mp3"
     },
     {
         "Name": "ٱلْجَلِيلُ",
@@ -453,12 +457,14 @@
     {
         "Name": "مَالِكُ ٱلْمُلْكُ",
         "Transliteration": "MAALIK-UL-MULK",
-        "Meaning": "Master of the Kingdom, Owner of the Dominion"
+        "Meaning": "Master of the Kingdom, Owner of the Dominion",
+        "Audio":"MAALIK-UL-MULK.mp3"
     },
     {
         "Name": "ذُو ٱلْجَلَالِ وَٱلْإِكْرَامُ",
         "Transliteration": "DHUL-JALAALI WAL-IKRAAM",
-        "Meaning": "Possessor of Glory and Honour, Lord of Majesty and Generosity"
+        "Meaning": "Possessor of Glory and Honour, Lord of Majesty and Generosity",
+        "Audio":"DHUL-JALAALI WAL-IKRAAM.mp3"
     },
     {
         "Name": "ٱلْمُقْسِطُ",
