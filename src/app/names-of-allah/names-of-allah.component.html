@@ -1,7 +1,4 @@
 <mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
   <img [routerLink]="'/'" src="/assets/icon.png" width="68px" height="24px" />
   <span class="example-spacer"></span>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
@@ -13,11 +10,27 @@
 </mat-toolbar>
 
 <div class="container">
-  <h1>99 Names of Allah (Al Asma Ul Husna)</h1>
-  <mat-slider>
-    <input matSliderThumb>
-  </mat-slider>
-  <h3>when you click on any name then AI say the name in voice</h3>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div>
+      <h1>99 Names of Allah (Al Asma Ul Husna)</h1>
+      <h3>when you click on any name then AI say the name in voice</h3>
+
+    </div>
+
+    <mat-card class="example-result-card">
+      <mat-card-content>
+        <h2>Speed of Sound</h2>
+        <br>
+
+        <div fxLayoutAlign="space-between center">
+          <label>Max Value</label>
+          <label class="example-value-label">{{playbackRate}}</label>
+        </div>
+        <mat-slider max="2.1" min="0.1" step="0.1" [(ngModel)]="playbackRate" aria-labelledby="example-name-label">
+        </mat-slider>
+      </mat-card-content>
+    </mat-card>
+  </div>
   <div id="name-line" fxLayoutGap="10px">
     <div class="letter-box" *ngFor="let item of dataSource">
       <div class="letter-only letter-border letter-selector" (click)="playSound(item.Audio!)">

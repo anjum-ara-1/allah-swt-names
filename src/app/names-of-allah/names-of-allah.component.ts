@@ -2,51 +2,38 @@ import { Component, OnInit } from '@angular/core';
 import { TransliterationService } from './Transliteration.service';
 import { Transliteration } from './Transliteration.model';
 
-
 @Component({
   selector: 'app-names-of-allah',
   templateUrl: './names-of-allah.component.html',
-  styleUrls: ['./names-of-allah.component.scss']
+  styleUrls: ['./names-of-allah.component.scss'],
 })
 export class NamesOfAllahComponent implements OnInit {
-
-  displayedColumns: string[] = ['name', 'Transliteration', 'Meaning'];
   dataSource: Transliteration[] = [];
-  disabled = false;
-  max = 100;
-  min = 0;
-  showTicks = false;
-  step = 1;
-  thumbLabel = false;
-  value = 0;
-  
+  playbackRate: number = 1.0;
 
-  constructor( private service:TransliterationService) { }
+  constructor(private service: TransliterationService) {}
 
   ngOnInit(): void {
     this.getDataList();
   }
-  
-  getDataList(){
+
+  getDataList() {
     this.service.getData().subscribe({
-      next:(res)=> {
+      next: (res) => {
         this.dataSource = res;
       },
-      error:(err)=> {
-        "something went worng"
-      }
-    })
+      error: (err) => {
+        'something went worng';
+      },
+    });
   }
 
-  playSound(filename: string){
+  playSound(filename: string) {
     const path = `/assets/sound/${filename}`;
     const audio = new Audio();
+    audio.playbackRate = this.playbackRate;
     audio.src = path;
-    audio.playbackRate = 0.1;
     audio.load();
     audio.play();
   }
-  
- 
-  
 }

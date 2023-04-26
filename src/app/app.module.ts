@@ -13,6 +13,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [AppComponent, NamesOfAllahComponent],
@@ -29,6 +31,8 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatSliderModule,
     MatInputModule,
+    FormsModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
