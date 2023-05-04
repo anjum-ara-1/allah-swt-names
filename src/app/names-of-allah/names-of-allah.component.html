@@ -1,7 +1,9 @@
 <mat-toolbar>
   <img [routerLink]="'/'" src="/assets/icon.png" width="68px" height="24px" />
+  <button routerLink="/table">table</button>
   <span class="example-spacer"></span>
-  <button mat-button [matMenuTriggerFor]="menu">{{ selectedAudio?.name || 'Select Sound'}}<mat-icon>arrow_drop_down</mat-icon></button>
+  <button mat-button [matMenuTriggerFor]="menu">{{ selectedAudio?.name || 'Select
+    Sound'}}<mat-icon>arrow_drop_down</mat-icon></button>
   <mat-menu #menu="matMenu">
     <ng-container *ngFor="let option of audioOptions$ | async">
       <button mat-menu-item (click)="onAudioChange(option)">{{option.name}}</button>
@@ -38,7 +40,7 @@
       </mat-card-content>
     </mat-card>
   </div>
-  <div id="name-line" fxLayoutGap="10px">
+  <div id="name-line" fxLayoutAlign="space-around center">
     <div class="letter-box" *ngFor="let item of dataSource">
       <div class="letter-only letter-border letter-selector" (click)="playSound(item.Audio!)">
         <div class="main-letter">
@@ -50,5 +52,3 @@
   </div>
 
 </div>
-
-

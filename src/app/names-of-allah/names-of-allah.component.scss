@@ -1,7 +1,5 @@
 #name-line {
-  display: flex;
   flex-wrap: wrap;
-  margin-bottom: 20px
 }
 
 .mat-slider-horizontal {
@@ -58,8 +56,6 @@
     vertical-align: middle;
     text-align: center;
 
-    min-width: calc((100vw - (70px)) / 5);
-    min-height: 45px;
 
     .main-letter {
       font-size: 18px;
@@ -100,4 +96,3 @@
 .mat-toolbar {
   background-color: #00bfa5;
 }
-
