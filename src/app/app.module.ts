@@ -15,6 +15,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, NamesOfAllahComponent],
@@ -33,6 +34,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatInputModule,
     FormsModule,
     MatMenuModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

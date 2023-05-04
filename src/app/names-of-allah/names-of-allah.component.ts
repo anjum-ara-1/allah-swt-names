@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TransliterationService } from './Transliteration.service';
 import { Transliteration } from './Transliteration.model';
+import { AppService } from '../services/app.service';
+import { Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-names-of-allah',
@@ -10,11 +12,23 @@ import { Transliteration } from './Transliteration.model';
 export class NamesOfAllahComponent implements OnInit {
   dataSource: Transliteration[] = [];
   playbackRate: number = 1.0;
+  audioOptions$!: Observable<any>;
+  selectedAudio: any;
 
-  constructor(private service: TransliterationService) {}
+  constructor(
+    private service: TransliterationService,
+    private appService: AppService
+  ) {}
 
   ngOnInit(): void {
     this.getDataList();
+    this.audioOptions$ = this.appService
+      .getAudioOptions()
+      .pipe(tap((x) => this.appService.setSelectedAudio(x[0])));
+
+    this.appService.getSelectedAudio().subscribe((x) => {
+      this.selectedAudio = x;
+    });
   }
 
   getDataList() {
@@ -29,11 +43,15 @@ export class NamesOfAllahComponent implements OnInit {
   }
 
   playSound(filename: string) {
-    const path = `/assets/sound/${filename}`;
+    const path = `/assets/sound/${this.selectedAudio.path}/${filename}`;
     const audio = new Audio();
     audio.playbackRate = this.playbackRate;
     audio.src = path;
     audio.load();
     audio.play();
+  }
+
+  onAudioChange(option: any) {
+    this.appService.setSelectedAudio(option);
   }
 }

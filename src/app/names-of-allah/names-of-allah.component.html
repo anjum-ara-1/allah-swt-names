@@ -1,12 +1,19 @@
 <mat-toolbar>
   <img [routerLink]="'/'" src="/assets/icon.png" width="68px" height="24px" />
   <span class="example-spacer"></span>
+  <button mat-button [matMenuTriggerFor]="menu">{{ selectedAudio?.name || 'Select Sound'}}<mat-icon>arrow_drop_down</mat-icon></button>
+  <mat-menu #menu="matMenu">
+    <ng-container *ngFor="let option of audioOptions$ | async">
+      <button mat-menu-item (click)="onAudioChange(option)">{{option.name}}</button>
+    </ng-container>
+  </mat-menu>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
   </button>
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon>share</mat-icon>
   </button>
+
 </mat-toolbar>
 
 <div class="container">
@@ -45,14 +52,3 @@
 </div>
 
 
-<!-- <div *ngFor="let item of dataSource"><span class="card" (click)="playSound(item.Audio!)"
-        fxLayoutAlign="center center"> {{item.Name}}<br>{{item.Transliteration}}<br>
-        {{item.Meaning}}</span></div> -->
-
-<!-- <ul class="flex-container wrap" >
-      <li class="flex-container wrap" *ngFor="let item of dataSource" (click)="playSound(item.Audio!)">
-        <span class="card" 
-        fxLayoutAlign="center center"> {{item.Name}}<br>{{item.Transliteration}}<br>
-        {{item.Meaning}}</span></li>
-
-    </ul> -->
