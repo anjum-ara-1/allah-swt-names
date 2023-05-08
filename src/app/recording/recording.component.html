@@ -2,3 +2,23 @@
     <mat-icon (click)="back()">arrow_back</mat-icon>
     <span class="app-title">Recording</span>
 </mat-toolbar>
+
+
+<div class="app-page-content">
+    <div class="mt-16 mb-16" fxLayout="row" fxLayoutAlign="center center">
+        <div>Voices recorded for 0/99</div>
+    </div>
+    <div class="media-footer sticky-footer">
+        <mat-toolbar color="primary">
+            <mat-toolbar-row class="media-action-bar">
+                <button *ngIf="recorderState == 1 || recorderState == 2 || recorderState >= 4" mat-button
+                    (click)="startRecording()">
+                    <mat-icon mat-list-icon>mic</mat-icon>
+                </button>
+                <button *ngIf="recorderState == 4 || recorderState == 3" mat-button (click)="stopRecording()">
+                    <mat-icon mat-list-icon>stop</mat-icon>
+                </button>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </div>
+</div>

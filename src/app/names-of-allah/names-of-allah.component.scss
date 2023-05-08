@@ -59,21 +59,16 @@
     vertical-align: middle;
     text-align: center;
 
-
     .main-letter {
       font-size: 18px;
     }
-
-
   }
 }
 
 .letter-box {
-
   &.letter-active,
   &:hover,
   &:focus {
-
     .letter-only,
     .letter-img {
       color: #00796b;

@@ -1,3 +1,23 @@
+.app-page-content {
+
+    .media-footer {
+        width: 100%;
+
+        .media-action-bar {
+            width: 100%;
+            padding: 2.5rem;
+            justify-content: center;
+
+            .mat-icon {
+                height: 48px;
+                width: 48px;
+                font-size: 48px;
+            }
+        }
+    }
+}
+
+
 .app-title {
     font-size: var(--font-size-title);
     letter-spacing: 2px;
