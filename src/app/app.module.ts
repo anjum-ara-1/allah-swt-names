@@ -16,9 +16,15 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MyVoiceComponent } from './my-voice/my-voice.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { RecordingComponent } from './recording/recording.component';
 @NgModule({
-  declarations: [AppComponent, NamesOfAllahComponent],
+  declarations: [AppComponent, NamesOfAllahComponent, MyVoiceComponent, RecordingComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,6 +41,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     MatMenuModule,
     BrowserAnimationsModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDividerModule,
+    MatChipsModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

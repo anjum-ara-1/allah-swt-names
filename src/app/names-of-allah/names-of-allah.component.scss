@@ -1,6 +1,9 @@
 #name-line {
   flex-wrap: wrap;
 }
+.example-container {
+  width: 100%;
+}
 
 .mat-slider-horizontal {
   max-width: 300px;
@@ -89,10 +92,3 @@
   }
 }
 
-.example-spacer {
-  flex: 1 1 auto;
-}
-
-.mat-toolbar {
-  background-color: #00bfa5;
-}

@@ -1,0 +1,30 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .mat-toolbar {
+    background-color: #00bfa5;
+  }
+  
+  .app-container,
+  .app-sidenav-content {
+    height: calc(100vh - 64px);
+  }
+  
+  @media (max-width: 599.9px) {
+  
+    .app-container,
+    .app-sidenav-content {
+      height: calc(100vh - 56px);
+    }
+  }
+  
+  .app-sidenav {
+    width: 260px;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 11;
+  }

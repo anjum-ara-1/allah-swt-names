@@ -1,54 +1,36 @@
-<mat-toolbar>
-  <img [routerLink]="'/'" src="/assets/icon.png" width="68px" height="24px" />
-  <button routerLink="/table">table</button>
-  <span class="example-spacer"></span>
-  <button mat-button [matMenuTriggerFor]="menu">{{ selectedAudio?.name || 'Select
-    Sound'}}<mat-icon>arrow_drop_down</mat-icon></button>
-  <mat-menu #menu="matMenu">
-    <ng-container *ngFor="let option of audioOptions$ | async">
-      <button mat-menu-item (click)="onAudioChange(option)">{{option.name}}</button>
-    </ng-container>
-  </mat-menu>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
 
-</mat-toolbar>
 
-<div class="container">
-  <div fxLayout="row" fxLayoutAlign="space-between center">
-    <div>
-      <h1>99 Names of Allah (Al Asma Ul Husna)</h1>
-      <h3>when you click on any name then AI say the name in voice</h3>
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div>
+        <h1>99 Names of Allah (Al Asma Ul Husna)</h1>
+        <h3>when you click on any name then AI say the name in voice</h3>
 
+      </div>
+
+      <mat-card class="example-result-card">
+        <mat-card-content>
+          <h2>Speed of Sound</h2>
+          <br>
+
+          <div fxLayoutAlign="space-between center">
+            <label>Max Value</label>
+            <label class="example-value-label">{{playbackRate}}</label>
+          </div>
+          <mat-slider max="2.1" min="0.1" step="0.1" [(ngModel)]="playbackRate" aria-labelledby="example-name-label">
+          </mat-slider>
+        </mat-card-content>
+      </mat-card>
     </div>
-
-    <mat-card class="example-result-card">
-      <mat-card-content>
-        <h2>Speed of Sound</h2>
-        <br>
-
-        <div fxLayoutAlign="space-between center">
-          <label>Max Value</label>
-          <label class="example-value-label">{{playbackRate}}</label>
-        </div>
-        <mat-slider max="2.1" min="0.1" step="0.1" [(ngModel)]="playbackRate" aria-labelledby="example-name-label">
-        </mat-slider>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div id="name-line" fxLayoutAlign="space-around center">
-    <div class="letter-box" *ngFor="let item of dataSource">
-      <div class="letter-only letter-border letter-selector" (click)="playSound(item.Audio!)">
-        <div class="main-letter">
-          <span> <span class="name-design"> {{item.Name}} </span><br>{{item.Transliteration}}<br>
-            {{item.Meaning}}</span>
+    <div id="name-line" fxLayoutAlign="space-around center">
+      <div class="letter-box" *ngFor="let item of dataSource">
+        <div class="letter-only letter-border letter-selector" (click)="playSound(item.Audio!)">
+          <div class="main-letter">
+            <span> <span class="name-design"> {{item.Name}} </span><br>{{item.Transliteration}}<br>
+              {{item.Meaning}}</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-</div>
+  </div>

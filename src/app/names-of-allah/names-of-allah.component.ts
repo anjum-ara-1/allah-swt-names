@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { TransliterationService } from './Transliteration.service';
 import { Transliteration } from './Transliteration.model';
 import { AppService } from '../services/app.service';
 import { Observable, tap } from 'rxjs';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-names-of-allah',
@@ -15,9 +16,12 @@ export class NamesOfAllahComponent implements OnInit {
   audioOptions$!: Observable<any>;
   selectedAudio: any;
 
+  @Input() inputSideNav!: MatSidenav;
+
   constructor(
     private service: TransliterationService,
-    private appService: AppService
+    private appService: AppService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -28,6 +32,7 @@ export class NamesOfAllahComponent implements OnInit {
 
     this.appService.getSelectedAudio().subscribe((x) => {
       this.selectedAudio = x;
+      this.cdr.detectChanges();
     });
   }
 
