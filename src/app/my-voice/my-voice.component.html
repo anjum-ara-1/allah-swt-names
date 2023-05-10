@@ -12,22 +12,24 @@
     <div class="ml-16 mr-16">
         <div >
     
-            <div fxLayout="row" fxLayoutAlign="space-between center">
-                <div>
-                    Names of Allah
-                </div>
-                <div fxLayoutGap="8px">
-                    <mat-chip-list class="count-chips" aria-label="Fish selection" >
-                        <mat-chip></mat-chip>
-                    </mat-chip-list>
-                    <button mat-button mat-raised-button routerLink="/recording" > Start Recording</button>
-                </div>
+            <div >
+                <li fxLayout="row" fxLayoutAlign="space-between center" >
+                    <div>
+                        
+                    </div>
+                    <div fxLayoutGap="8px">
+                        <mat-chip-list class="count-chips" aria-label="Fish selection" >
+                            <mat-chip></mat-chip>
+                        </mat-chip-list>
+                        <button mat-button mat-raised-button routerLink="/recording" > Start Recording</button>
+                    </div>
+                </li>
             </div>
     
             <hr />
         </div>
     </div>
-
+ {{names | json}}
 
 
 

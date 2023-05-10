@@ -23,8 +23,15 @@ import { MyVoiceComponent } from './my-voice/my-voice.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RecordingComponent } from './recording/recording.component';
+import { NgxIndexedDBModule } from 'ngx-indexed-db';
+import { dbConfig } from './services/storage.service';
 @NgModule({
-  declarations: [AppComponent, NamesOfAllahComponent, MyVoiceComponent, RecordingComponent],
+  declarations: [
+    AppComponent,
+    NamesOfAllahComponent,
+    MyVoiceComponent,
+    RecordingComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -46,6 +53,7 @@ import { RecordingComponent } from './recording/recording.component';
     MatDividerModule,
     MatChipsModule,
     MatFormFieldModule,
+    NgxIndexedDBModule.forRoot(dbConfig),
   ],
   providers: [],
   bootstrap: [AppComponent],
