@@ -6,6 +6,8 @@ import {
 } from '../services/audio-recorder.service';
 
 import { AudioService } from '../services/audio.service';
+import { TransliterationService } from '../names-of-allah/Transliteration.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-recording',
@@ -13,20 +15,40 @@ import { AudioService } from '../services/audio.service';
   styleUrls: ['./recording.component.scss'],
 })
 export class RecordingComponent implements OnInit {
+  dataSource: any;
   outputFormat: OutputFormat = OutputFormat.WEBM_BLOB;
+  voiceMata: any;
 
   constructor(
     private location: Location,
     private audioRecorderService: NgAudioRecorderService,
-    private audioService: AudioService
+    private audioService: AudioService,
+    private namesOfAllah: TransliterationService,
+    private router: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-
-    this.audioService.getNameAudio('AD-DHARR').subscribe(x =>{
+    this.router.params.subscribe((x: any) => {
       console.log(x);
-    })
 
+      this.voiceMata = x;
+    });
+
+    this.getNamesOfAllah();
+    this.audioService.getNameAudio('AD-DHARR').subscribe((x) => {
+      console.log(x);
+    });
+  }
+
+  getNamesOfAllah() {
+    this.namesOfAllah.getData().subscribe({
+      next: (res) => {
+        this.dataSource = res;
+      },
+      error: (err) => {
+        alert('something went worng!');
+      },
+    });
   }
 
   back(): void {

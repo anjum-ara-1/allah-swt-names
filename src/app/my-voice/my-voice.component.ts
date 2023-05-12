@@ -1,30 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { TransliterationService } from '../names-of-allah/Transliteration.service';
 import { Transliteration } from '../names-of-allah/Transliteration.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-voice',
   templateUrl: './my-voice.component.html',
-  styleUrls: ['./my-voice.component.scss']
+  styleUrls: ['./my-voice.component.scss'],
 })
 export class MyVoiceComponent implements OnInit {
-  names:any;
+  names: any;
   dataSource: Transliteration[] = [];
-  constructor(private namesOfAllah:TransliterationService) { }
+  constructor(
+    private namesOfAllah: TransliterationService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.namesOfAllah.getData();
+    this.getNamesAllah();
   }
 
-  getNamesAllah(){
+  getNamesAllah() {
     this.namesOfAllah.getData().subscribe({
-      next : (res) => {
-        this.names = res;
+      next: (res) => {
+        this.dataSource = res;
       },
-      error : (err) => {
-        alert("something went wrong!")
-      }
-    })
+      error: (err) => {
+        alert('something went wrong!');
+      },
+    });
   }
 
+  goToRecording(data: any) {
+    debugger;
+    this.router.navigate(['/recording'], data);
+  }
 }
