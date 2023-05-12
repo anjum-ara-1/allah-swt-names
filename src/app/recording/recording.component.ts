@@ -7,7 +7,7 @@ import {
 
 import { AudioService } from '../services/audio.service';
 import { TransliterationService } from '../names-of-allah/Transliteration.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Data, Router } from '@angular/router';
 
 @Component({
   selector: 'app-recording',
@@ -17,7 +17,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class RecordingComponent implements OnInit {
   dataSource: any;
   outputFormat: OutputFormat = OutputFormat.WEBM_BLOB;
-  voiceMata: any;
+  voiceName: any;
+  voiceAudio: any;
 
   constructor(
     private location: Location,
@@ -28,10 +29,10 @@ export class RecordingComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.router.params.subscribe((x: any) => {
+    this.router.queryParamMap.subscribe((x) => {
       console.log(x);
-
-      this.voiceMata = x;
+      this.voiceName = x.get('Transliteration') ;
+      this.voiceAudio = x.get ('Audio')
     });
 
     this.getNamesOfAllah();
@@ -89,4 +90,15 @@ export class RecordingComponent implements OnInit {
   get recorderState() {
     return this.audioRecorderService.recorderState;
   }
+
+  playSound(filename: string) {
+    const path = `/assets/sound/1/${filename}`;
+    const audio = new Audio();
+    audio.src = path;
+    audio.load();
+    audio.play();
+  }
+
+  
+
 }

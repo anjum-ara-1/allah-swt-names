@@ -19,13 +19,37 @@
 }
 
 mat-slider {
-    width: 90%  ;
-  }
+    width: 90%;
+}
 
 .app-title {
     font-size: var(--font-size-title);
     letter-spacing: 2px;
 }
+    
+.play-button {
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background-color: #9ce7dd;
+    border-radius: 5px;
+    box-shadow: 0 4px #c4c7c6;
+}
+
+.play-button:hover {
+    background-color: #00bfa5
+}
+
+.play-button:active {
+    background-color: #049481;
+    box-shadow: 0 2px #919090;
+    transform: translateY(4px);
+}
+
 
 // @media (min-width: 426px) {
 //     .app-title {
