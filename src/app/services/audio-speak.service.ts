@@ -83,7 +83,7 @@ export class AudioSpeakService {
         return this.stateChange.asObservable();
     }
 
-    private loadObservable(url) {
+    private loadObservable(url:any) {
         return new Observable(observer => {
             // Play audio
             this.audioObj.src = url;
@@ -110,7 +110,7 @@ export class AudioSpeakService {
         });
     }
 
-    private streamObservable(url) {
+    private streamObservable(url:any) {
         return new Observable(observer => {
             // Play audio
             this.audioObj.src = url;
@@ -135,23 +135,23 @@ export class AudioSpeakService {
         });
     }
 
-    private addEvents(obj, events, handler) {
-        events.forEach(event => {
+    private addEvents(obj:any, events:any, handler:any) {
+        events.forEach((event: any) => {
             obj.addEventListener(event, handler);
         });
     }
 
-    private removeEvents(obj, events, handler) {
-        events.forEach(event => {
+    private removeEvents(obj:any, events:any, handler:any) {
+        events.forEach((event: any) => {
             obj.removeEventListener(event, handler);
         });
     }
 
-    loadStream(url) {
+    loadStream(url :any) {
         return this.loadObservable(url).pipe(takeUntil(this.stop$));
     }
 
-    playStream(url) {
+    playStream(url: any) {
         return this.streamObservable(url).pipe(takeUntil(this.stop$));
     }
 
@@ -167,7 +167,7 @@ export class AudioSpeakService {
         this.stop$.next(undefined);
     }
 
-    seekTo(seconds) {
+    seekTo(seconds:any) {
         this.audioObj.currentTime = seconds;
     }
 

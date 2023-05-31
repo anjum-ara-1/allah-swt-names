@@ -35,4 +35,8 @@ export class StorageService {
   get(tableName: string, key: string | number) {
     return this.db.getByID(tableName, key);
   }
+
+  deleteRecord(tableName: string, key: string | number) {
+    return this.db.deleteByKey(tableName, key);
+  }
 }

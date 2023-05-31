@@ -25,12 +25,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { RecordingComponent } from './recording/recording.component';
 import { NgxIndexedDBModule } from 'ngx-indexed-db';
 import { dbConfig } from './services/storage.service';
+import { RecordSpeakComponent } from './record-speak/record-speak.component';
 @NgModule({
   declarations: [
     AppComponent,
     NamesOfAllahComponent,
     MyVoiceComponent,
     RecordingComponent,
+    RecordSpeakComponent,
   ],
   imports: [
     BrowserModule,

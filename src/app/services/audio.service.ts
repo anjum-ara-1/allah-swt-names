@@ -16,7 +16,55 @@ export class AudioService {
     return this.storage.addOrUpdate(tableNames.audio, audioObj);
   }
 
-  getNameAudio(arg0: string) {
-    return this.storage.get(tableNames.audio, arg0);
+  getNameAudio(name: string) {
+    return this.storage.get(tableNames.audio, name);
   }
+
+  safePlay(ele: HTMLAudioElement, src: string, retryCounter = 1) {
+    if (ele) {
+      ele.src = src;
+      // ele.load();
+      ele.onloadeddata = () => {
+        ele.play().catch((err) => this.errorHandling(err, ele));
+      }
+
+      ele.onerror = (x) => {
+        // this.logger.error('Could not safe play', x);
+        if (retryCounter == 1) {
+          this.safePlay(ele, src, ++retryCounter);
+        }
+
+      }
+    }
+  }
+
+  /**
+   * Error handling of Audio play
+   * @param err DOMException
+   */
+  errorHandling(err: DOMException, context?: any) {
+    if (err && err.code == 9) {
+      // // err.name == 'NotSupportedError
+      // // do nothing as audio is interpted 
+      // let x = this.noty.info('Could not play audio.', 'Play');
+      // if (context) {
+      //   x.onAction().subscribe(_ => {
+      //     context.load();
+      //     context.play();
+      //   })
+      // }
+      // this.logger.error('Could not play this audio', { err, context });
+      // // this.noty.error('Audio paused: Could not play this audio.', 'Change Audio');
+    } else if (err && err.code == 20) {
+      // err.name == 'AbortError
+      // do nothing as audio is interpted 
+      // this.logger.error('Audio paused: Could not play this audio', { err, context });
+    }
+    else {
+      // this.logger.error('Could not play this audio', { err, context });
+      // this.noty.error('Could not play this audio.', 'Change Audio');
+    }
+  }
+
+  
 }

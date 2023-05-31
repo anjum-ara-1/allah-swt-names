@@ -9,20 +9,41 @@
             <div>Voices recorded for 0/99</div>
         </div>
         <div class="mt-16" fxLayout="row" fxLayoutAlign="center center">
-            <div>Default Voice for Name of Allah "{{voiceName}}" </div>
+            <div>Your Voice for Name of Allah "{{voiceName}}" </div>
         </div>
-       <div fxLayoutAlign="center center">
-        <span class="flex-grow-0" class="play-button">
-            <mat-icon mat-list-icon (click)="playSound( voiceAudio )" >play_arrow</mat-icon>
-            <mat-icon mat-list-icon>pause</mat-icon>
-        </span>
-        <mat-slider aria-label="unit(s)"></mat-slider>
-       </div>
+        <mat-list class="audio-list mb-16" color="primary">
 
-       {{voiceAudio}}
-    
-    
-    
+            <mat-list-item>
+                <div class="flex flex-center w-100-per">
+                    <!-- <input class="flex-grow-0" type="checkbox" [ngModel]="storedAudio.inUse"
+                        (ngModelChange)="inUseChecked(storedAudio, $event)" [readonly]="storedAudio.inUse" name="inUse"
+                        [value]="storedAudio.id"> -->
+                    <app-record-speak class="flex-grow-1" *ngIf="recordedAudioUrl" mat-line [url]="recordedAudioUrl"
+                        (onDelete)="deleteRecording()"></app-record-speak>
+                </div>
+            </mat-list-item>
+        </mat-list>
+
+
+        <!-- <div fxLayoutAlign="center center" (click)="playRecordedSound()">
+            <span class="flex-grow-0" class="play-button">
+                <mat-icon mat-list-icon>play_arrow</mat-icon>
+            </span>
+            <mat-slider aria-label="unit(s)"></mat-slider>
+        </div> -->
+
+        <div>
+            <div class="mt-16" fxLayout="row" fxLayoutAlign="center center">
+                <div>Default Voice for Name of Allah "{{voiceName}}" </div>
+            </div>
+            <div fxLayoutAlign="center center" (click)="playSound(voiceAudio)">
+                <span class="flex-grow-0" class="play-button">
+                    <mat-icon mat-list-icon>play_arrow</mat-icon>
+                </span>
+                <mat-slider aria-label="unit(s)"></mat-slider>
+            </div>
+        </div>
+
         <div class="media-footer sticky-footer">
             <mat-toolbar color="primary">
                 <mat-toolbar-row class="media-action-bar">

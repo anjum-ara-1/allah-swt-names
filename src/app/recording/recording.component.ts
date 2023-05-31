@@ -19,6 +19,8 @@ export class RecordingComponent implements OnInit {
   outputFormat: OutputFormat = OutputFormat.WEBM_BLOB;
   voiceName: any;
   voiceAudio: any;
+  recordedAudio: any;
+  recordedAudioUrl?: string;
 
   constructor(
     private location: Location,
@@ -36,9 +38,7 @@ export class RecordingComponent implements OnInit {
     });
 
     this.getNamesOfAllah();
-    this.audioService.getNameAudio('AD-DHARR').subscribe((x) => {
-      console.log(x);
-    });
+   this.getRecordAudio();
   }
 
   getNamesOfAllah() {
@@ -67,7 +67,7 @@ export class RecordingComponent implements OnInit {
         console.log(output);
         if (output) {
           this.audioService
-            .addNameAudio(output as Blob, 'AD-DHARR')
+            .addNameAudio(output as Blob, this.voiceName)
             .subscribe((x) => {
               console.log(x);
             });
@@ -99,6 +99,47 @@ export class RecordingComponent implements OnInit {
     audio.play();
   }
 
-  
+  getRecordAudio(){
+    this.audioService.getNameAudio(this.voiceName).subscribe({
+      next: (res: any)=>{
+        this.recordedAudio = res.blob;
+        this.recordedAudioUrl = URL.createObjectURL(this.recordedAudio);
+      },
+      error:(err)=>{
+        alert('someting went wrong')
+      }
+    });
+  }
+
+  trackByFn(index: number, item: any) {
+    return item.id;
+  }
+ 
+  deleteRecording() {
+    // this.app.audio.deleteAudio(storedAudio).subscribe(x => {
+    //   this.storedAudios = this.storedAudios.filter(x => x.id !== storedAudio.id);
+    // });
+  }
+
+  inUseChecked(storedAudio: any, event: boolean) {
+    // this.storedAudios.forEach(x => {
+    //   x.inUse = event && x.id === storedAudio.id ? 1 : 0;
+    // });
+    // this.app.audio.bulkUpdateAudio(this.storedAudios);
+    // this.cdr.detectChanges();
+    // this.updateInUseAudiosLength();
+    return false;
+  }
 
 }
+
+
+
+
+ // playRecordedSound() {
+  //   const path = this.recordedAudio;
+  //   const audio = new Audio();
+  //   audio.src = path;
+  //   audio.load();
+  //   audio.play();
+  // }
