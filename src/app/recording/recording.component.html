@@ -5,24 +5,27 @@
 
 <div class="container">
     <div class="app-page-content">
+
         <div class="mt-16 mb-16" fxLayout="row" fxLayoutAlign="center center">
             <div>Voices recorded for 0/99</div>
         </div>
-        <div class="mt-16" fxLayout="row" fxLayoutAlign="center center">
-            <div>Your Voice for Name of Allah "{{voiceName}}" </div>
-        </div>
-        <mat-list class="audio-list mb-16" color="primary">
 
-            <mat-list-item>
-                <div class="flex flex-center w-100-per">
-                    <!-- <input class="flex-grow-0" type="checkbox" [ngModel]="storedAudio.inUse"
-                        (ngModelChange)="inUseChecked(storedAudio, $event)" [readonly]="storedAudio.inUse" name="inUse"
-                        [value]="storedAudio.id"> -->
-                    <app-record-speak class="flex-grow-1" *ngIf="recordedAudioUrl" mat-line [url]="recordedAudioUrl"
-                        (onDelete)="deleteRecording()"></app-record-speak>
-                </div>
-            </mat-list-item>
-        </mat-list>
+        <div fxLayout="column"fxLayoutAlign="center center">
+            <div class="mt-16" fxLayout="row" fxLayoutAlign="center center">
+                <div>Your Voice for Name of Allah "{{voiceName}}" </div>
+            </div>
+            <mat-list class="audio-list mb-16" color="primary">
+                <mat-list-item>
+                    <div class="flex flex-center w-100-per">
+                        <!-- <input class="flex-grow-0" type="checkbox" [ngModel]="storedAudio.inUse"
+                            (ngModelChange)="inUseChecked(storedAudio, $event)" [readonly]="storedAudio.inUse" name="inUse"
+                            [value]="storedAudio.id"> -->
+                        <app-record-speak class="flex-grow-1" *ngIf="recordedAudioUrl" mat-line [url]="recordedAudioUrl"
+                            (onDelete)="deleteRecording()"></app-record-speak>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        </div>
 
 
         <!-- <div fxLayoutAlign="center center" (click)="playRecordedSound()">
