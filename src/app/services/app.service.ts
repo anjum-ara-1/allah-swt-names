@@ -22,7 +22,7 @@ export class AppService {
     return of([
       { name: 'Fatima', path: '1' },
       { name: 'Hameed', path: '2' },
-      { name: 'Custom', path: '3' },
+      { name: 'Custom', path: '1' },
     ]);
   }
 

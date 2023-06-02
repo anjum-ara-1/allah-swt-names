@@ -8,10 +8,11 @@ export class AudioService {
   
   constructor(private storage: StorageService) {}
 
-  addNameAudio(blob: Blob, name: string) {
+  addNameAudio(blob: Blob, name: string, inUse: boolean) {
     let audioObj = {
       blob: blob,
-      name: name
+      name: name,
+      inUse: inUse
     };
     return this.storage.addOrUpdate(tableNames.audio, audioObj);
   }

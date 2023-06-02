@@ -21,6 +21,7 @@ export class RecordingComponent implements OnInit {
   voiceAudio: any;
   recordedAudio: any;
   recordedAudioUrl?: string;
+  recordedAudioInUse: boolean = false;
 
   constructor(
     private location: Location,
@@ -33,12 +34,12 @@ export class RecordingComponent implements OnInit {
   ngOnInit(): void {
     this.router.queryParamMap.subscribe((x) => {
       console.log(x);
-      this.voiceName = x.get('Transliteration') ;
-      this.voiceAudio = x.get ('Audio')
+      this.voiceName = x.get('Transliteration');
+      this.voiceAudio = x.get('Audio');
     });
 
     this.getNamesOfAllah();
-   this.getRecordAudio();
+    this.getRecordedAudio();
   }
 
   getNamesOfAllah() {
@@ -67,12 +68,13 @@ export class RecordingComponent implements OnInit {
         console.log(output);
         if (output) {
           this.audioService
-            .addNameAudio(output as Blob, this.voiceName)
+            .addNameAudio(output as Blob, this.voiceName, false)
             .subscribe((x) => {
               console.log(x);
             });
         }
       });
+    location.reload();
   }
 
   pause() {
@@ -99,14 +101,12 @@ export class RecordingComponent implements OnInit {
     audio.play();
   }
 
-  getRecordAudio(){
-    this.audioService.getNameAudio(this.voiceName).subscribe({
-      next: (res: any)=>{
-        this.recordedAudio = res.blob;
+  getRecordedAudio() {
+    this.audioService.getNameAudio(this.voiceName).subscribe((x: any) => {
+      if (x) {
+        this.recordedAudio = x.blob;
         this.recordedAudioUrl = URL.createObjectURL(this.recordedAudio);
-      },
-      error:(err)=>{
-        alert('someting went wrong')
+        this.recordedAudioInUse = x.inUse;
       }
     });
   }
@@ -114,32 +114,19 @@ export class RecordingComponent implements OnInit {
   trackByFn(index: number, item: any) {
     return item.id;
   }
- 
+
   deleteRecording() {
     // this.app.audio.deleteAudio(storedAudio).subscribe(x => {
     //   this.storedAudios = this.storedAudios.filter(x => x.id !== storedAudio.id);
     // });
   }
 
-  inUseChecked(storedAudio: any, event: boolean) {
-    // this.storedAudios.forEach(x => {
-    //   x.inUse = event && x.id === storedAudio.id ? 1 : 0;
-    // });
-    // this.app.audio.bulkUpdateAudio(this.storedAudios);
-    // this.cdr.detectChanges();
-    // this.updateInUseAudiosLength();
+  inUseChecked(event: boolean) {
+    this.audioService
+      .addNameAudio(this.recordedAudio, this.voiceName, event)
+      .subscribe((x) => {
+        console.log(x);
+      });
     return false;
   }
-
 }
-
-
-
-
- // playRecordedSound() {
-  //   const path = this.recordedAudio;
-  //   const audio = new Audio();
-  //   audio.src = path;
-  //   audio.load();
-  //   audio.play();
-  // }

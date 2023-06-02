@@ -17,7 +17,6 @@ export class AppComponent {
   playbackRate: number = 1.0;
   audioOptions$!: Observable<any>;
   selectedAudio: any;
-
   
   @Input() inputSideNav!: MatSidenav;
 
@@ -26,7 +25,6 @@ export class AppComponent {
     private appService: AppService,
     private cdr: ChangeDetectorRef
     ) {}
-
 
     ngOnInit(): void {
       this.getDataList();
@@ -39,6 +37,7 @@ export class AppComponent {
         this.cdr.detectChanges();
       });
     }
+
     getDataList() {
       this.service.getData().subscribe({
         next: (res) => {
