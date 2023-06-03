@@ -3,5 +3,4 @@ export interface Transliteration {
     Transliteration?: string,
     Meaning?: string,
     Audio?:string
-
 }

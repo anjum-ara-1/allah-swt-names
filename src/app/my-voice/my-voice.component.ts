@@ -32,7 +32,6 @@ export class MyVoiceComponent implements OnInit {
   }
 
   goToRecording(data: any) {
-    
-    this.router.navigate(['/recording'],{ queryParams: data });
+    this.router.navigate(['/recording'], { queryParams: data });
   }
 }

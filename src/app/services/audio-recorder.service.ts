@@ -7,7 +7,6 @@ export class NgAudioRecorderService {
   private _chunks: Array<any> = [];
   protected recorderEnded = new EventEmitter();
   public recorderError = new EventEmitter<ErrorCase>();
-  // tslint:disable-next-line
   private _recorderState = RecorderState.INITIALIZING;
   private recorder?: MediaRecorder;
 

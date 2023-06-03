@@ -1,6 +1,7 @@
 #name-line {
   flex-wrap: wrap;
 }
+
 .example-container {
   width: 100%;
 }
@@ -32,9 +33,6 @@
   margin-bottom: 10px;
 }
 
-
-
-
 .name-design {
   font-size: 40px;
 }
@@ -43,7 +41,6 @@
   display: inline-block;
   width: 325px;
   height: 165px;
-
 
   .letter-only {
     width: 315px;
@@ -66,9 +63,11 @@
 }
 
 .letter-box {
+
   &.letter-active,
   &:hover,
   &:focus {
+
     .letter-only,
     .letter-img {
       color: #00796b;
@@ -86,4 +85,3 @@
     opacity: 0.5;
   }
 }
-

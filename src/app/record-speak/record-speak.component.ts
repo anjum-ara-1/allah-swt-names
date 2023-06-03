@@ -15,11 +15,9 @@ export class RecordSpeakComponent implements OnInit, OnChanges {
   @Output() onDelete = new EventEmitter();
 
   constructor(
-    private audioService: AudioSpeakService,
-  ) {
-    // get media files
-
-    // listen to stream state
+    private audioService: AudioSpeakService,) 
+    
+    {
     this.audioService.getState().subscribe(state => {
       this.state = state;
     });

@@ -10,33 +10,25 @@
             <div>Voices recorded for 0/99</div>
         </div>
 
-        <div fxLayout="column"fxLayoutAlign="center center">
+        <div fxLayout="column" fxLayoutAlign="center center">
             <div class="mt-16" fxLayout="row" fxLayoutAlign="center center">
                 <div>Your Voice for Name of Allah "{{voiceName}}" </div>
             </div>
 
             <p>If you want to use your voice then please sign the checkbox</p>
-           <div fxLayout="row" fxLayoutAlign="center center">
-            <!-- <input class="flex-grow-0" type="checkbox" (ngModelChange)="inUseChecked( $event)" > -->
-            <mat-list class="audio-list mb-16" color="primary">
-                <mat-list-item>
-                    <div class="flex flex-center w-100-per" fxLayout="row" fxLayoutAlign="center center">
-                        <input type="checkbox" [ngModel]="recordedAudioInUse" (ngModelChange)="inUseChecked($event)"/>
-                        <app-record-speak class="flex-grow-1" *ngIf="recordedAudioUrl" mat-line [url]="recordedAudioUrl"
-                            (onDelete)="deleteRecording()"></app-record-speak>
-                    </div>
-                </mat-list-item>
-            </mat-list>
-           </div>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <mat-list class="audio-list mb-16" color="primary">
+                    <mat-list-item>
+                        <div class="flex flex-center w-100-per" fxLayout="row" fxLayoutAlign="center center">
+                            <input type="checkbox" [ngModel]="recordedAudioInUse"
+                                (ngModelChange)="inUseChecked($event)" />
+                            <app-record-speak class="flex-grow-1" *ngIf="recordedAudioUrl" mat-line
+                                [url]="recordedAudioUrl" (onDelete)="deleteRecording()"></app-record-speak>
+                        </div>
+                    </mat-list-item>
+                </mat-list>
+            </div>
         </div>
-
-
-        <!-- <div fxLayoutAlign="center center" (click)="playRecordedSound()">
-            <span class="flex-grow-0" class="play-button">
-                <mat-icon mat-list-icon>play_arrow</mat-icon>
-            </span>
-            <mat-slider aria-label="unit(s)"></mat-slider>
-        </div> -->
 
         <div>
             <div class="mt-16" fxLayout="row" fxLayoutAlign="center center">
