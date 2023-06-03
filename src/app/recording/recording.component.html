@@ -20,7 +20,7 @@
             <!-- <input class="flex-grow-0" type="checkbox" (ngModelChange)="inUseChecked( $event)" > -->
             <mat-list class="audio-list mb-16" color="primary">
                 <mat-list-item>
-                    <div class="flex flex-center w-100-per">
+                    <div class="flex flex-center w-100-per" fxLayout="row" fxLayoutAlign="center center">
                         <input type="checkbox" [ngModel]="recordedAudioInUse" (ngModelChange)="inUseChecked($event)"/>
                         <app-record-speak class="flex-grow-1" *ngIf="recordedAudioUrl" mat-line [url]="recordedAudioUrl"
                             (onDelete)="deleteRecording()"></app-record-speak>
