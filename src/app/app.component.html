@@ -12,7 +12,7 @@
         <mat-icon>arrow_drop_down</mat-icon></button>
 
     <mat-menu #menu="matMenu">
-        <ng-container *ngFor="let option of audioOptions$ | async">
+        <ng-container *ngFor="let option of audioOptions">
             <button mat-menu-item (click)="onAudioChange(option)">{{option.name}}</button>
         </ng-container>
     </mat-menu>

@@ -2,8 +2,9 @@ import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { TransliterationService } from '../app/names-of-allah/Transliteration.service';
 import { Transliteration } from '../app/names-of-allah/Transliteration.model';
 import { AppService } from '../app/services/app.service';
-import { Observable, tap } from 'rxjs';
+import { Observable, delay, tap } from 'rxjs';
 import { MatSidenav } from '@angular/material/sidenav';
+import { AudioService } from './services/audio.service';
 
 @Component({
   selector: 'app-root',
@@ -19,18 +20,33 @@ export class AppComponent {
   selectedAudio: any;
 
   @Input() inputSideNav!: MatSidenav;
+  audioOptions?: { name: string; path: string; }[];
 
   constructor(
     private service: TransliterationService,
     private appService: AppService,
+    private audioService: AudioService,
     private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
     this.getDataList();
-    this.audioOptions$ = this.appService
+    this.appService
       .getAudioOptions()
-      .pipe(tap((x) => this.appService.setSelectedAudio(x[0])));
+      .pipe(tap((x) => this.appService.setSelectedAudio(x[0]))).subscribe(x =>{
+        this.audioOptions = x;
+      });
+
+      this.audioService
+      .getSpeakerName()
+      .pipe(delay(1000))
+      .subscribe((x) => {
+        var custom = this.audioOptions?.find(y => y.name === 'Custom');
+        if(custom){
+          custom.name = x || 'Custom';
+        }
+        
+      });
 
     this.appService.getSelectedAudio().subscribe((x) => {
       this.selectedAudio = x;
