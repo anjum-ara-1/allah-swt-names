@@ -8,7 +8,7 @@
     <div>
         <mat-form-field class="example-full-width" appearance="outline">
             <mat-label class="label">Speaker Name</mat-label>
-            <input matInput type="text">
+            <input matInput [(ngModel)]="speakerName" (blur)="saveSpeakerName($event)" type="text">
         </mat-form-field>
     </div>
 
@@ -21,10 +21,7 @@
                             {{item.Transliteration}}
                         </span>
                     </div>
-                    <div fxLayoutGap="8px">
-                        <mat-chip-list class="count-chips" aria-label="Fish selection">
-                            <mat-chip></mat-chip>
-                        </mat-chip-list>
+                    <div>
                         <button mat-button mat-raised-button (click)="goToRecording(item)"> Start Recording</button>
                     </div>
                 </li>
