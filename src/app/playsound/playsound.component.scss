@@ -1,0 +1,48 @@
+.letter-box {
+    display: inline-block;
+    width: 325px;
+    height: 165px;
+
+    .letter-only {
+        width: 315px;
+        height: 145px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: whitesmoke;
+        border-radius: 8px;
+        border: 1px solid #00bfa5;
+        color: #00bfa5;
+        vertical-align: middle;
+        text-align: center;
+
+        .main-letter {
+            font-size: 18px;
+        }
+    }
+}
+
+.letter-box {
+
+    &.letter-active,
+    &:hover,
+    &:focus {
+
+        .letter-only,
+        .letter-img {
+            color: #00796b;
+            border: 1px solid #00796b;
+            box-shadow: 0 0 5px #00796b;
+            // background-color: rgba(0, 0, 0, 0.5);
+            background: transparent;
+        }
+    }
+}
+
+.letter-box.letter-box-blur {
+    .letter-selector {
+        filter: blur(1px);
+        opacity: 0.5;
+    }
+}

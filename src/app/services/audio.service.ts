@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { StorageService, tableNames } from './storage.service';
 import { Observable, map } from 'rxjs';
+import { BlobAudioModel } from '../models/blob-audio.model';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class AudioService {
   }
 
   getNameAudio(name: string) {
-    return this.storage.get(tableNames.audio, name);
+    return this.storage.get<BlobAudioModel>(tableNames.audio, name);
   }
 
   safePlay(ele: HTMLAudioElement, src: string, retryCounter = 1) {

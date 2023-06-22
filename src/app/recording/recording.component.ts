@@ -6,8 +6,9 @@ import {
 } from '../services/audio-recorder.service';
 
 import { AudioService } from '../services/audio.service';
-import { TransliterationService } from '../names-of-allah/Transliteration.service';
+import { NamesService } from '../services/names.service';
 import { ActivatedRoute, Data, Router } from '@angular/router';
+import { NameInfo } from '../models/name-info.model';
 
 @Component({
   selector: 'app-recording',
@@ -27,7 +28,7 @@ export class RecordingComponent implements OnInit {
     private location: Location,
     private audioRecorderService: NgAudioRecorderService,
     private audioService: AudioService,
-    private namesOfAllah: TransliterationService,
+    private namesOfAllah: NamesService,
     private router: ActivatedRoute
   ) {}
 
@@ -43,7 +44,7 @@ export class RecordingComponent implements OnInit {
   }
 
   getNamesOfAllah() {
-    this.namesOfAllah.getData().subscribe({
+    this.namesOfAllah.getGodNames().subscribe({
       next: (res) => {
         this.dataSource = res;
       },

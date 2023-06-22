@@ -1,6 +1,7 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { AppService } from '../services/app.service';
 import { Observable, tap } from 'rxjs';
+import { NameInfo } from '../models/name-info.model';
 
 @Component({
   selector: 'app-playsound',
@@ -8,38 +9,25 @@ import { Observable, tap } from 'rxjs';
   styleUrls: ['./playsound.component.scss'],
 })
 export class PlaysoundComponent implements OnInit {
-  playbackRate: number = 1.0;
-  audioOptions$!: Observable<any>;
+  @Input() nameInfo!: NameInfo;
   selectedAudio: any;
-  selectedSound: any;
+  playbackRate: number = 1.0;
 
-  constructor(private appService: AppService, private cdr: ChangeDetectorRef) {}
+  constructor(private appService: AppService) {}
 
   ngOnInit(): void {
-    this.audioOptions$ = this.appService
-      .getAudioOptions()
-      .pipe(tap((x) => this.appService.setSelectedAudio(x[0])));
-
     this.appService.getSelectedAudio().subscribe((x) => {
       this.selectedAudio = x;
-      this.cdr.detectChanges();
     });
-
-    this.appService.getAudioOptions().subscribe((x) =>{
-      this.selectedSound = x.Audio!;
-    })
   }
 
-  play(filename: string) {
-    const path = `/assets/sound/${this.selectedAudio.path}/${filename}`;
+  playSound() {
+    const path = `/assets/sound/${this.selectedAudio.path}/${this.nameInfo.Audio}`;
     const audio = new Audio();
     audio.playbackRate = this.playbackRate;
     audio.src = path;
     audio.load();
     audio.play();
   }
-
-  onAudioChange(option: any) {
-    this.appService.setSelectedAudio(option);
-  }
+ 
 }

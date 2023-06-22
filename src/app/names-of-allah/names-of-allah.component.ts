@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
-import { TransliterationService } from './Transliteration.service';
-import { Transliteration } from './Transliteration.model';
+import { NamesService } from '../services/names.service';
+import { NameInfo } from '../models/name-info.model';
 import { AppService } from '../services/app.service';
 import { Observable, tap } from 'rxjs';
 import { MatSidenav } from '@angular/material/sidenav';
@@ -11,7 +11,7 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./names-of-allah.component.scss'],
 })
 export class NamesOfAllahComponent implements OnInit {
-  dataSource: Transliteration[] = [];
+  dataSource: NameInfo[] = [];
   playbackRate: number = 1.0;
   audioOptions$!: Observable<any>;
   selectedAudio: any;
@@ -19,7 +19,7 @@ export class NamesOfAllahComponent implements OnInit {
   @Input() inputSideNav!: MatSidenav;
 
   constructor(
-    private service: TransliterationService,
+    private service: NamesService,
     private appService: AppService,
     private cdr: ChangeDetectorRef
   ) {}
@@ -38,7 +38,7 @@ export class NamesOfAllahComponent implements OnInit {
   }
 
   getDataList() {
-    this.service.getData().subscribe({
+    this.service.getGodNames().subscribe({
       next: (res) => {
         this.dataSource = res;
       },
@@ -49,7 +49,7 @@ export class NamesOfAllahComponent implements OnInit {
   }
 
   playSound(item:any){
-    this.appService.playSound.next(item);
+    // this.appService.playSound.next(item);
   }
   // playSound(filename: string) {
   //   const path = `/assets/sound/${this.selectedAudio.path}/${filename}`;

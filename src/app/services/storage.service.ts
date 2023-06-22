@@ -42,9 +42,11 @@ export class StorageService {
   addOrUpdateName<T>(tableName: string, obj: T) {
     return this.db.update(tableName, obj);
   }
-  get(tableName: string, key: string | number) {
-    return this.db.getByID(tableName, key);
+
+  get<T>(tableName: string, key: string | number) {
+    return this.db.getByID<T>(tableName, key);
   }
+  
   deleteRecord(tableName: string, key: string | number) {
     return this.db.deleteByKey(tableName, key);
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TransliterationService } from '../names-of-allah/Transliteration.service';
-import { Transliteration } from '../names-of-allah/Transliteration.model';
+import { NamesService } from '../services/names.service';
+import { NameInfo } from '../models/name-info.model';
 import { Router } from '@angular/router';
 import { AudioService } from '../services/audio.service';
 
@@ -11,11 +11,11 @@ import { AudioService } from '../services/audio.service';
 })
 export class MyVoiceComponent implements OnInit {
   names: any;
-  dataSource: Transliteration[] = [];
+  dataSource: NameInfo[] = [];
   speakerName?: string;
 
   constructor(
-    private namesOfAllah: TransliterationService,
+    private namesOfAllah: NamesService,
     private router: Router,
     private audioService: AudioService
   ) {}
@@ -29,7 +29,7 @@ export class MyVoiceComponent implements OnInit {
   }
 
   getNamesAllah() {
-    this.namesOfAllah.getData().subscribe({
+    this.namesOfAllah.getGodNames().subscribe({
       next: (res) => {
         this.dataSource = res;
       },

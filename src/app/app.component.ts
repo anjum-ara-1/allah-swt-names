@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
-import { TransliterationService } from '../app/names-of-allah/Transliteration.service';
-import { Transliteration } from '../app/names-of-allah/Transliteration.model';
+import { NamesService } from './services/names.service';
+import { NameInfo } from './models/name-info.model';
 import { AppService } from '../app/services/app.service';
 import { Observable, delay, tap } from 'rxjs';
 import { MatSidenav } from '@angular/material/sidenav';
@@ -14,7 +14,7 @@ import { AudioService } from './services/audio.service';
 export class AppComponent {
   title = 'allah-swt-names';
 
-  dataSource: Transliteration[] = [];
+  dataSource: NameInfo[] = [];
   playbackRate: number = 1.0;
   audioOptions$!: Observable<any>;
   selectedAudio: any;
@@ -23,7 +23,7 @@ export class AppComponent {
   audioOptions?: { name: string; path: string; }[];
 
   constructor(
-    private service: TransliterationService,
+    private service: NamesService,
     private appService: AppService,
     private audioService: AudioService,
     private cdr: ChangeDetectorRef
@@ -55,7 +55,7 @@ export class AppComponent {
   }
 
   getDataList() {
-    this.service.getData().subscribe({
+    this.service.getGodNames().subscribe({
       next: (res) => {
         this.dataSource = res;
       },

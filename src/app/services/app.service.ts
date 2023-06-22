@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, of } from 'rxjs';
+import { AudioOption } from '../models/audio-option.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppService {
-  setting = new BehaviorSubject<any>({});
-  private selectedAudio = new BehaviorSubject<any>({});
+  private selectedAudio = new BehaviorSubject<AudioOption>({} as any);
 
   constructor() {}
 
-  setSelectedAudio(audio: any) {
+  setSelectedAudio(audio: AudioOption) {
     this.selectedAudio.next(audio);
   }
 
@@ -25,5 +25,4 @@ export class AppService {
       { name: 'Custom', path: '1' },
     ]);
   }
-
 }
