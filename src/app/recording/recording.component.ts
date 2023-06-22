@@ -74,7 +74,6 @@ export class RecordingComponent implements OnInit {
             });
         }
       });
-    location.reload();
   }
 
   pause() {
@@ -116,9 +115,11 @@ export class RecordingComponent implements OnInit {
   }
 
   deleteRecording() {
-    // this.app.audio.deleteAudio(storedAudio).subscribe(x => {
-    //   this.storedAudios = this.storedAudios.filter(x => x.id !== storedAudio.id);
-    // });
+    this.audioService.deleteAudio(this.voiceName).subscribe(x => {
+
+      
+      // this.recordedAudio = this.recordedAudio.filter(this.voiceName)
+    });
   }
 
   inUseChecked(event: boolean) {
