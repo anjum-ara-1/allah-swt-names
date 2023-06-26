@@ -20,9 +20,9 @@ export class AppService {
 
   getAudioOptions() {
     return of([
-      { name: 'Fatima', path: '1' },
-      { name: 'Hameed', path: '2' },
-      { name: 'Custom', path: '1' },
+      { name: 'Fatima', path: '1', isCustom: false },
+      { name: 'Hameed', path: '2', isCustom: false },
+      { name: 'Custom', path: '1', isCustom: true },
     ]);
   }
 }

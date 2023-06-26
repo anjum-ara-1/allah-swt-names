@@ -14,6 +14,7 @@ export class PlaysoundComponent implements OnInit {
   selectedAudio: any;
   playbackRate: number = 1.0;
   recordedAudioUrl?: string;
+  speakerName?: string;
 
   constructor(
     private appService: AppService,
@@ -26,6 +27,9 @@ export class PlaysoundComponent implements OnInit {
     });
 
     this.getRecordedAudio();
+    this.audioService
+    .getSpeakerName()
+    .subscribe((x) => (this.speakerName = x));
   }
 
   getRecordedAudio() {
@@ -42,8 +46,8 @@ export class PlaysoundComponent implements OnInit {
 
   playSound() {
     const audio = new Audio();
-    if (this.recordedAudioUrl) {
-      audio.src = this.recordedAudioUrl;
+    if (this.recordedAudioUrl && this.selectedAudio?.isCustom ) {
+      audio.src= this.recordedAudioUrl;
     } else {
       const path = `/assets/sound/${this.selectedAudio.path}/${this.nameInfo.Audio}`;
       audio.src = path;
