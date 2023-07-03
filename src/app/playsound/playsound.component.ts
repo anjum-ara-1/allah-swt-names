@@ -15,6 +15,7 @@ export class PlaysoundComponent implements OnInit {
   playbackRate: number = 1.0;
   recordedAudioUrl?: string;
   speakerName?: string;
+  recordedAudioInUse?: boolean;
 
   constructor(
     private appService: AppService,
@@ -39,14 +40,14 @@ export class PlaysoundComponent implements OnInit {
         if (x) {
           let recordedAudio = x.blob;
           this.recordedAudioUrl = URL.createObjectURL(recordedAudio);
-          // this.recordedAudioInUse = x.inUse;
+          this.recordedAudioInUse = x.inUse;
         }
       });
   }
 
   playSound() {
     const audio = new Audio();
-    if (this.recordedAudioUrl && this.selectedAudio?.isCustom ) {
+    if (this.recordedAudioUrl && this.recordedAudioInUse && this.selectedAudio?.isCustom ) {
       audio.src= this.recordedAudioUrl;
     } else {
       const path = `/assets/sound/${this.selectedAudio.path}/${this.nameInfo.Audio}`;

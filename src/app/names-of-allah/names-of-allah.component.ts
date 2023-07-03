@@ -48,18 +48,6 @@ export class NamesOfAllahComponent implements OnInit {
     });
   }
 
-  playSound(item:any){
-    // this.appService.playSound.next(item);
-  }
-  // playSound(filename: string) {
-  //   const path = `/assets/sound/${this.selectedAudio.path}/${filename}`;
-  //   const audio = new Audio();
-  //   audio.playbackRate = this.playbackRate;
-  //   audio.src = path;
-  //   audio.load();
-  //   audio.play();
-  // }
-
   onAudioChange(option: any) {
     this.appService.setSelectedAudio(option);
   }
