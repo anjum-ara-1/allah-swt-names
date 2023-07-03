@@ -36,8 +36,6 @@ export class RecordSpeakComponent implements OnInit, OnChanges {
 
   loadStream(url : any) {
     this.audioService.loadStream(url).subscribe(events => {
-      // listening for fun here
-      // this.app.logger.debug(events);
     });
   }
 

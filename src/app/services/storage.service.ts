@@ -50,12 +50,11 @@ export class StorageService {
   deleteRecord(tableName: string, key: string | number) {
     return this.db.deleteByKey(tableName, key);
   }
-  // updateByKey<T>(tableName: string, obj: T, key?: IDBValidKey) {
-  //   return this.db.updateByKey(tableName, obj, key);
-  // }
+
   getByKey<T>(storeName: string, key: IDBValidKey) {
     return this.db.getByKey<T>(storeName, key);
   }
+  
   addRecord<T>(tableName: string, obj: T) {
     return this.db.add<T>(tableName, obj);
   }

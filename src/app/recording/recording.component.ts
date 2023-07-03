@@ -72,6 +72,7 @@ export class RecordingComponent implements OnInit {
             .addNameAudio(output as Blob, this.voiceName, false)
             .subscribe((x) => {
               console.log(x);
+              this.getRecordedAudio();
             });
         }
       });
@@ -116,10 +117,8 @@ export class RecordingComponent implements OnInit {
   }
 
   deleteRecording() {
-    this.audioService.deleteAudio(this.voiceName).subscribe(x => {
-
-      
-      // this.recordedAudio = this.recordedAudio.filter(this.voiceName)
+    this.audioService.deleteAudio(this.voiceName).subscribe((x) => {
+      this.recordedAudioUrl = '';
     });
   }
 

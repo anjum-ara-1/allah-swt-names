@@ -71,7 +71,7 @@ export class AudioService {
    * @returns Speaker name as Observable
    */
   deleteAudio(item: any) {
-    return this.storage.deleteRecord(tableNames.audio, Number(item.id));
+    return this.storage.deleteRecord(tableNames.audio, item);
   }
 
   getSpeakerName(): Observable<string> {
