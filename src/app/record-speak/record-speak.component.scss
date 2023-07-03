@@ -4,16 +4,18 @@ mat-slider {
 
 .play-button {
     display: inline-block;
-    font-size: 24px;
     cursor: pointer;
-    text-align: center;
-    text-decoration: none;
     outline: none;
     border: none;
     background-color: #9ce7dd;
-    border-radius: 5px;
     box-shadow: 0 4px #c4c7c6;
-    width: 47px;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    box-sizing: content-box;
+    border-radius: 50%;
+    padding: 8px !important;
+    margin-right: 10px;
 }
 
 .play-button:hover {

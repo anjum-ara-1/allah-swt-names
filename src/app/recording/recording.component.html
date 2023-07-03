@@ -3,12 +3,8 @@
     <span class="app-title">Recording</span>
 </mat-toolbar>
 
-<div class="container">
+<div>
     <div class="app-page-content">
-
-        <div class="mt-16 mb-16" fxLayout="row" fxLayoutAlign="center center">
-            <div>Voices recorded for 0/99</div>
-        </div>
 
         <div fxLayout="column" fxLayoutAlign="center center">
             <div class="mt-16" fxLayout="row" fxLayoutAlign="center center">
@@ -20,8 +16,10 @@
                 <mat-list class="audio-list mb-16" color="primary">
                     <mat-list-item>
                         <div class="flex flex-center w-100-per" fxLayout="row" fxLayoutAlign="center center">
-                            <input type="checkbox" *ngIf="recordedAudioUrl" [ngModel]="recordedAudioInUse"
-                                (ngModelChange)="inUseChecked($event)" />
+                            <!-- <input class="checkbox" type="checkbox" *ngIf="recordedAudioUrl" [ngModel]="recordedAudioInUse"
+                                (ngModelChange)="inUseChecked($event)" /> -->
+                            <mat-checkbox class="example-margin" *ngIf="recordedAudioUrl" [ngModel]="recordedAudioInUse"
+                                (ngModelChange)="inUseChecked($event)"></mat-checkbox>
                             <app-record-speak class="flex-grow-1" *ngIf="recordedAudioUrl" mat-line
                                 [url]="recordedAudioUrl" (onDelete)="deleteRecording()"></app-record-speak>
                         </div>
@@ -34,9 +32,9 @@
             <div class="mt-16" fxLayout="row" fxLayoutAlign="center center">
                 <div>Default Voice for Name of Allah "{{voiceName}}" </div>
             </div>
-            <div fxLayoutAlign="center center" (click)="playSound(voiceAudio)">
-                <span class="flex-grow-0" class="play-button">
-                    <mat-icon mat-list-icon>play_arrow</mat-icon>
+            <div class="flex flex-center" fxLayoutAlign="center center" >
+                <span class="flex-grow-0" (click)="playSound(voiceAudio)">
+                    <mat-icon class="play-button" mat-list-icon>play_arrow</mat-icon>
                 </span>
                 <mat-slider aria-label="unit(s)"></mat-slider>
             </div>

@@ -27,6 +27,8 @@ import { NgxIndexedDBModule } from 'ngx-indexed-db';
 import { dbConfig } from './services/storage.service';
 import { RecordSpeakComponent } from './record-speak/record-speak.component';
 import { PlaysoundComponent } from './playsound/playsound.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { PlaysoundComponent } from './playsound/playsound.component';
     MatChipsModule,
     MatFormFieldModule,
     NgxIndexedDBModule.forRoot(dbConfig),
+    MatCheckboxModule,
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

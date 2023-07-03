@@ -19,26 +19,28 @@
 }
 
 mat-slider {
-    width: 90%;
+    width: 900px;
 }
 
 .app-title {
     font-size: var(--font-size-title);
     letter-spacing: 2px;
 }
-    
+
 .play-button {
     display: inline-block;
-    font-size: 24px;
     cursor: pointer;
-    text-align: center;
-    text-decoration: none;
     outline: none;
     border: none;
     background-color: #9ce7dd;
-    border-radius: 5px;
     box-shadow: 0 4px #c4c7c6;
-    width: 47px;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    box-sizing: content-box;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 10px;
 }
 
 .play-button:hover {
@@ -49,4 +51,8 @@ mat-slider {
     background-color: #049481;
     box-shadow: 0 2px #919090;
     transform: translateY(4px);
+}
+
+.example-margin {
+    margin: 0 10px;
 }
