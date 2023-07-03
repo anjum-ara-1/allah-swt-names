@@ -1,5 +1,5 @@
 <div class="flex-grow-1">
-    <div class="flex flex-center" fxLayout="row" fxLayoutAlign="center center">
+    <div class="flex flex-center">
         <span class="flex-grow-0">
             <mat-icon class="play-button" (click)="play()" [attr.disabled]="state?.error" *ngIf="!state?.playing"
                 mat-list-icon>play_arrow</mat-icon>
@@ -14,3 +14,4 @@
         </span>
     </div>
 </div>
+
