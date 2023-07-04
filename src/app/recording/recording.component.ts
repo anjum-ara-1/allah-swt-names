@@ -23,6 +23,7 @@ export class RecordingComponent implements OnInit {
   recordedAudio: any;
   recordedAudioUrl?: string;
   recordedAudioInUse: boolean = false;
+  voiceAudioUrl: any;
 
   constructor(
     private location: Location,
@@ -33,12 +34,7 @@ export class RecordingComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.router.queryParamMap.subscribe((x) => {
-      console.log(x);
-      this.voiceName = x.get('Transliteration');
-      this.voiceAudio = x.get('Audio');
-    });
-
+    this.getDefaultAudio();
     this.getNamesOfAllah();
     this.getRecordedAudio();
   }
@@ -94,14 +90,6 @@ export class RecordingComponent implements OnInit {
     return this.audioRecorderService.recorderState;
   }
 
-  playSound(filename: string) {
-    const path = `/assets/sound/1/${filename}`;
-    const audio = new Audio();
-    audio.src = path;
-    audio.load();
-    audio.play();
-  }
-
   getRecordedAudio() {
     this.audioService.getNameAudio(this.voiceName).subscribe((x: any) => {
       if (x) {
@@ -109,6 +97,15 @@ export class RecordingComponent implements OnInit {
         this.recordedAudioUrl = URL.createObjectURL(this.recordedAudio);
         this.recordedAudioInUse = x.inUse;
       }
+    });
+  }
+
+  getDefaultAudio() {
+    this.router.queryParamMap.subscribe((x) => {
+      console.log(x);
+      this.voiceName = x.get('Transliteration');
+      this.voiceAudio = x.get('Audio');
+      this.voiceAudioUrl = `/assets/sound/1/${this.voiceAudio}`;
     });
   }
 
