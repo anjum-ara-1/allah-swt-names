@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve --port 4201",
     "build": "ng build",
+    "build:etrivia": "ng build --base-href https://allah-swt-names.etrivia.app",
+    "deploy:etrivia": "npx angular-cli-ghpages --dir=dist/allah-swt-names",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
