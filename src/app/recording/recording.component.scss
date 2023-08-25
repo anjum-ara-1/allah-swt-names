@@ -1,0 +1,55 @@
+.app-page-content {
+
+    .media-footer {
+        width: 100%;
+        margin-top: 50px;
+
+        .media-action-bar {
+            width: 100%;
+            padding: 2.5rem;
+            justify-content: center;
+
+            .mat-icon {
+                height: 48px;
+                width: 48px;
+                font-size: 48px;
+            }
+        }
+    }
+}
+
+.app-title {
+    font-size: var(--font-size-title);
+    letter-spacing: 2px;
+}
+
+.play-button {
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #9ce7dd;
+    box-shadow: 0 4px #c4c7c6;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    box-sizing: content-box;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.play-button:hover {
+    background-color: #00bfa5
+}
+
+.play-button:active {
+    background-color: #049481;
+    box-shadow: 0 2px #919090;
+    transform: translateY(4px);
+}
+
+.example-margin {
+    margin: 0 10px;
+}
+

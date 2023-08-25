@@ -1,0 +1,17 @@
+<div >
+    <div class="flex flex-center">
+        <span class="flex-grow-0">
+            <mat-icon class="play-button" (click)="play()" [attr.disabled]="state?.error" *ngIf="!state?.playing"
+                mat-list-icon>play_arrow</mat-icon>
+            <mat-icon class="play-button"  (click)="pause()" *ngIf="state?.playing" mat-list-icon>pause</mat-icon>
+        </span>
+
+        <mat-slider class="time-slider flex-grow-1" min="0" [max]="state?.duration || 1000" step="1"
+            [value]="state?.currentTime" [step]="'0.0001'" (input)="onSliderChangeEnd($event)"
+            [disabled]="state?.error"></mat-slider>
+        <span *ngIf="allowDelete" class="flex-grow-0">
+            <mat-icon (click)="deleteRecording()">delete</mat-icon>
+        </span>
+    </div>
+</div>
+

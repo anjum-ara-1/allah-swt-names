@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="m-16">
+        <p>
+            You may want to record your own voice that would be available for your child to listen with Speaker Name or
+            Custom (C)
+        </p>
+    </div>
+    <div>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label class="label">Speaker Name</mat-label>
+            <input matInput [(ngModel)]="speakerName" (blur)="saveSpeakerName($event)" type="text">
+        </mat-form-field>
+    </div>
+
+    <div class="ml-16 mr-16">
+        <div>
+            <div *ngFor="let item of dataSource">
+                <li fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="40px">
+                    <div>
+                        <span>
+                            {{item.Transliteration}}
+                        </span>
+                    </div>
+                    <div>
+                        <button mat-button mat-raised-button (click)="goToRecording(item)"> Start Recording</button>
+                    </div>
+                </li>
+                <hr />
+            </div>
+        </div>
+    </div>
+
+</div>

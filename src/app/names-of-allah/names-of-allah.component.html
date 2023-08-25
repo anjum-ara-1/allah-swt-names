@@ -1,0 +1,17 @@
+<div class="container">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div>
+      <h1>99 Names of Allah (Al Asma Ul Husna)</h1>
+      <h3>when you click on any name then AI say the name in voice</h3>
+    </div>
+  </div>
+  
+  <div id="name-line" fxLayoutAlign="space-around center">
+    <div *ngFor="let item of dataSource">
+      <app-playsound [nameInfo]="item"></app-playsound>
+    </div>
+  </div>
+
+</div>
+
+<!-- (click)="playSound(item.Audio!)" -->
